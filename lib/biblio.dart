@@ -47,7 +47,7 @@ class _BiblioState extends State<Biblio> {
               return Container(
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                    color: Colors.amber,
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(15)),
                 child: gridCell(games[index]),
               );

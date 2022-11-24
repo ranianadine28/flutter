@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-class Signin extends StatefulWidget {
-  const Signin({Key? key}) : super(key: key);
+class mdp extends StatefulWidget {
+  const mdp({Key? key}) : super(key: key);
    
     @override
-  State<Signin> createState() => _Signin();
+  State<mdp> createState() => _mdp();
 }
-class _Signin extends State<Signin> {
+class _mdp extends State<mdp> {
   //var
   GlobalKey<FormState> formKey = GlobalKey();
 
   late String username;
 
 
-  late String password;
+  
 
 
   @override
@@ -21,7 +21,7 @@ class _Signin extends State<Signin> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("S'authentifier"),
+        title: const Text("Rénisialiser le mot de passe"),
       ),
      body: Form(
         key: formKey,
@@ -48,25 +48,11 @@ class _Signin extends State<Signin> {
                     border: OutlineInputBorder(), labelText: "Username"),
               ),
             ),
-          Container(
-            margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-            child:TextFormField(
-                onSaved: (newValue) {
-                  password = newValue!;
-                },
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return "password cannot be empty";
-                  }
-                },
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(), labelText: "Mot de passe"),
-              ),
-            ),
+         
           Container(
             margin: const EdgeInsets.fromLTRB(10, 20, 10, 0),
             child: ElevatedButton(
-              child: const Text("S'authentifier"),
+              child: const Text("Rénisialiser le mot de passe"),
               onPressed: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
@@ -76,7 +62,7 @@ class _Signin extends State<Signin> {
                           return AlertDialog(
                             title: const Text("Information"),
                             content: Text(
-                                " Username = $username \n Password = $password "),
+                                " Username = $username "),
                           );
                         },
                       );
@@ -84,29 +70,8 @@ class _Signin extends State<Signin> {
                   },
                 ),
           ),
-          Container(
-              margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                ),
-                child: const Text("Créer un compte"),
-                onPressed: () {},
-              )
-          ),
-          Container(
-            margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text("Mot de passe oublié ?"),
-                SizedBox(
-                  width: 10,
-                ),
-                Text("Cliquez ici", style: TextStyle(color: Colors.blue))
-              ],
-            ),
-          )
+         
+          
         ],
       ),
     ));

@@ -2,24 +2,22 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class inscription extends StatefulWidget {
-  inscription({super.key});
+class profil extends StatefulWidget {
+  profil({super.key});
 
   @override
-  State<inscription> createState() => _inscription();
+  State<profil> createState() => _profil();
 }
 
-class _inscription extends State<inscription> {
+class _profil extends State<profil> {
   //var
   GlobalKey<FormState> formKey = GlobalKey();
 
-  late String username;
-
-  late String mail;
+  
 
   late String password;
 
-  late String naissance;
+  late String newpassword;
 
   late String address;
 
@@ -37,40 +35,8 @@ class _inscription extends State<inscription> {
                 margin: const EdgeInsets.fromLTRB(20, 0, 20, 10),
                 child: Image.asset("Assets/minecraft.jpg",
                     width: 460, height: 215)),
-            Container(
-              margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-              child: TextFormField(
-                onSaved: (newValue) {
-                  username = newValue!;
-                },
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return "username cannot be empty";
-                  }
-                },
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(), labelText: "Username"),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
-              child: TextFormField(
-                onSaved: (newValue) {
-                  mail = newValue!;
-                },
-                validator: (value) {
-                  RegExp regex = RegExp(
-                      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
-                  if (value!.isEmpty) {
-                    return "email cannot be empty";
-                  } else if (!regex.hasMatch(value)) {
-                    return "Email invalid";
-                  }
-                },
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(), labelText: "Email"),
-              ),
-            ),
+           
+           
             Container(
               margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
               child: TextFormField(
@@ -83,23 +49,23 @@ class _inscription extends State<inscription> {
                   }
                 },
                 decoration: const InputDecoration(
-                    border: OutlineInputBorder(), labelText: "Mot de passe"),
+                    border: OutlineInputBorder(), labelText: "Mot de passe actuel"),
               ),
             ),
             Container(
               margin: const EdgeInsets.fromLTRB(10, 0, 10, 10),
               child: TextFormField(
                 onSaved: (newValue) {
-                  naissance = newValue!;
+                  newpassword = newValue!;
                 },
                 validator: (value) {
                   if (value!.isEmpty) {
-                    return "naissance cannot be empty";
+                    return "newpassword cannot be empty";
                   }
                 },
                 decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: "Année de naissance"),
+                    labelText: "nouveau mot de passe "),
               ),
             ),
             Container(
@@ -123,7 +89,7 @@ class _inscription extends State<inscription> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  child: const Text("S'inscrire"),
+                  child: const Text("Enregistrer"),
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
@@ -133,20 +99,14 @@ class _inscription extends State<inscription> {
                           return AlertDialog(
                             title: const Text("Information"),
                             content: Text(
-                                " Username = $username \n Email = $mail \n Password = $password \n Naissance = $naissance \n Address = $address"),
+                                " Password = $password \n newpassword = $newpassword \n Address = $address"),
                           );
                         },
                       );
                     }
                   },
                 ),
-                const SizedBox(
-                  width: 20,
-                ),
-                ElevatedButton(
-                  child: const Text("Annuler"),
-                  onPressed: () {},
-                )
+               
               ],
             )
           ],

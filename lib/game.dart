@@ -8,5 +8,6 @@ class Game {
 
   //constuctor
  Game.Two(this.image, this.title);
+ Game.three(this.image, this.price);
   Game(this.image, this.title, this.price);
 }

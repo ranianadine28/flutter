@@ -7,6 +7,9 @@ import 'package:myapp/biblio.dart';
 
 import 'package:myapp/gameDetail.dart';
 import 'package:myapp/home_screen.dart';
+import 'package:myapp/mdp.dart';
+import 'package:myapp/panier.dart';
+import 'package:myapp/profil.dart';
 
 
 void main() {
@@ -25,6 +28,6 @@ class MyApp extends StatelessWidget {
       
         primarySwatch: Colors.blue,
       ),
-      home: const  Biblio());
+      home:   panier());
   }
 }
