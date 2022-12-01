@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class inscription extends StatefulWidget {
+     static const String routeName = "/Signup";
+
   inscription({super.key});
 
   @override

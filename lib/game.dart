@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 
 class Game {
   //att
-  late String image;
-  late String title;
-  late int price;
+  final String image;
+  final String title;
+  final int price;
+  late int quantity;
 
   //constuctor
- Game.Two(this.image, this.title);
- Game.three(this.image, this.price);
-  Game(this.image, this.title, this.price);
+  Game(this.image, this.title, this.price, {required this.quantity});
+  Game.Two(this.image,this.title, this.price);
 }
+

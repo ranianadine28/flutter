@@ -28,6 +28,15 @@ class MyApp extends StatelessWidget {
       
         primarySwatch: Colors.blue,
       ),
-      home:   panier());
+      
+      routes: {
+                 Signin.routeName: (context) => const Signin(),
+                         mdp.routeName: (context) => const mdp(),
+       inscription.routeName: (context) =>  inscription(),
+
+
+         HomeScreen.routeName: (context) => const HomeScreen(),
+        DetailsScreen.routeName: (context) =>  DetailsScreen(),
+      },);
   }
 }

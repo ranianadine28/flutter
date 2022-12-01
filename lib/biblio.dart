@@ -13,12 +13,12 @@ class Biblio extends StatefulWidget {
 class _BiblioState extends State<Biblio> {
   //var
   final List<Game> games = [
-    Game.Two("dmc5.jpg", "Devil May Cry 5"),
-    Game.Two("fifa.jpg", "Fifa 22"),
-    Game.Two("minecraft.jpg", "Minecraft"),
-    Game.Two("nfs.jpg", "Need For Speed"),
-    Game.Two("rdr2.jpg", "Red Dead 2"),
-    Game.Two("re8.jpg", "Resident Evil 8")
+    Game.Two("dmc5.jpg", "Devil May Cry 5",2),
+    Game.Two("fifa.jpg", "Fifa 22",3),
+    Game.Two("minecraft.jpg", "Minecraft",7),
+    Game.Two("nfs.jpg", "Need For Speed",9),
+    Game.Two("rdr2.jpg", "Red Dead 2",9),
+    Game.Two("re8.jpg", "Resident Evil 8",0)
   ];
 
   //actions

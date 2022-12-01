@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/arguments/game.argument.dart';
 import 'package:myapp/game.dart';
+import 'package:myapp/gameDetail.dart';
 
 class Cell extends StatelessWidget {
   //var
@@ -9,7 +11,11 @@ class Cell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return InkWell(
+      onTap: (){
+          Navigator.pushNamed(context, DetailsScreen.routeName,
+            arguments: GameArgument(mGame));
+      },
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Row(

@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/Signup.dart';
+import 'package:myapp/home_screen.dart';
+import 'package:myapp/mdp.dart';
 
 class Signin extends StatefulWidget {
+     static const String routeName = "/";
+
   const Signin({Key? key}) : super(key: key);
    
     @override
@@ -66,7 +71,17 @@ class _Signin extends State<Signin> {
           Container(
             margin: const EdgeInsets.fromLTRB(10, 20, 10, 0),
             child: ElevatedButton(
-              child: const Text("S'authentifier"),
+              child: InkWell(
+ onTap: (){
+         Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HomeScreen(),
+            ));
+      },
+                  
+
+                child: const Text("S'authentifier")),
               onPressed: () {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
@@ -90,7 +105,11 @@ class _Signin extends State<Signin> {
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
                 ),
-                child: const Text("Créer un compte"),
+                child: InkWell(
+                   onTap: (){
+          Navigator.pushNamed(context, inscription.routeName);
+      },
+                  child: const Text("Créer un compte")),
                 onPressed: () {},
               )
           ),
@@ -98,12 +117,18 @@ class _Signin extends State<Signin> {
             margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children:  [
                 Text("Mot de passe oublié ?"),
                 SizedBox(
                   width: 10,
                 ),
-                Text("Cliquez ici", style: TextStyle(color: Colors.blue))
+                InkWell(
+                   onTap: (){
+          Navigator.pushNamed(context, mdp.routeName);
+      },
+                  
+                  
+                  child: Text("Cliquez ici", style: TextStyle(color: Colors.blue)))
               ],
             ),
           )

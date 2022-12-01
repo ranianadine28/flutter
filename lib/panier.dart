@@ -47,9 +47,10 @@ class _panierState extends State<panier> {
             ),
             Column(
               children: [
-                celll("assets/dmc5.jpg", 200),
-                celll("assets/dmc5.jpg", 200),
-                celll("assets/fifa.jpg", 100),
+                celll(
+                    Game("dmc5.jpg", "Devil May Cry 5", 200, quantity: 1)),
+              celll( Game("re8.jpg", "Resident Evil VIII", 300, quantity: 1)),
+                celll(Game("re8.jpg", "Resident Evil VIII", 100, quantity: 1)),
               ],
             )
           ],

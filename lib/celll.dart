@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:myapp/game.dart';
 
 class celll extends StatelessWidget {
 
-  final int price;
-  final String image;
+  final Game _game;
 
-  const celll(this.image, this.price);
+  const celll(this._game);
 
   //const CartItem({ Key? key }) : super(key: key);
 
@@ -21,8 +21,8 @@ class celll extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Icon(Icons.restore_from_trash_rounded, size: 50,),
-              Image.asset(image, height: 50,),
-              Text(price.toString() + ' TND', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)
+              Image.asset(this._game.image, height: 50,),
+              Text(this._game.price.toString() + ' TND', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)
             ],
           ),
         ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class mdp extends StatefulWidget {
+     static const String routeName = "/mdp";
+
   const mdp({Key? key}) : super(key: key);
    
     @override
